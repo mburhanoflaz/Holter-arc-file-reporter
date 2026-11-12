@@ -59,10 +59,9 @@ The software decodes the 3-channel (128 Hz, Little-Endian 16-bit) raw ECG wavefo
 5. **Export Outputs:**
 
 6. ## 📄 Lisans ve Araştırma Amaçlı Kullanım Notu (License & Research Disclaimer)
-
+   * Click **`Raporu .RTF Kaydet...`** (*Save Report as .RTF*) to export the clinical report.
+   * Click **`.ARC İçeriğini Klasöre Çıkar...`** (*Extract .ARC Contents to Folder*) to unpack all internal files.
 
 This project was created to be **freely available to clinical physicians and academic researchers conducting Heart Rate Variability (HRV) research**, and is licensed under the **MIT License**. You are free to use, modify, distribute, and adapt the source code for your research and non-commercial or commercial projects.
 
 > **Medical Disclaimer:** This software is intended strictly for academic research and data analysis purposes and is not a certified medical diagnostic device. Derived HRV metrics should not be used as the sole basis for clinical diagnosis or treatment decisions and must always be interpreted alongside original device reports and professional clinical judgment.
-   * Click **`Raporu .RTF Kaydet...`** (*Save Report as .RTF*) to export the clinical report.
-   * Click **`.ARC İçeriğini Klasöre Çıkar...`** (*Extract .ARC Contents to Folder*) to unpack all internal files.
