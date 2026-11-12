@@ -1,5 +1,4 @@
 # Holter-arc-file-reporter
-*(WeCardio 7.0 (.arc) Holter HRV Analysis & Reporting System)*
 
 [🇹🇷 Türkçe](#-türkçe) | [🇬🇧 English](#-english)
 
@@ -8,7 +7,7 @@
 ## 🇹🇷 Türkçe
 
 ### Kullanım Amacı
-Bu masaüstü uygulaması, **Bosram Biomedical WeCardio 7.0** Holter EKG analiz yazılımı tarafından dışa aktarılan **`.arc`** uzantılı ham hasta kayıt dosyalarını herhangi bir üçüncü parti kütüphaneye veya harici araca ihtiyaç duymadan doğrudan çözümlemek ve klinik düzeyde **Kalp Hızı Değişkenliği (HRV)** analizi yapmak amacıyla geliştirilmiştir.
+Bu masaüstü uygulaması, Çin menşeyli Holter EKG analiz yazılımı tarafından dışa aktarılan **`.arc`** uzantılı ham hasta kayıt dosyalarını herhangi bir üçüncü parti kütüphaneye veya harici araca ihtiyaç duymadan doğrudan çözümlemek ve klinik düzeyde **Kalp Hızı Değişkenliği (HRV)** analizi yapmak amacıyla geliştirilmiştir.
 
 Uygulama, ikili (binary) konteyner içerisindeki 3 kanallı (128 Hz, Little-Endian 16-bit) ham EKG sinyallerini ve atım işaretleyicilerini (`beats.atr`) ayrıştırır. Ektopik atımları (SVE/VE) ve rapor dışı işaretçileri otomatik filtreleyerek saf **NN (Normal-to-Normal)** aralıklarını izole eder; hem Zaman Alanı (Time-Domain) hem de Welch FFT tabanlı Frekans Alanı (Frequency-Domain) sirkadiyen otonom denge parametrelerini hesaplar.
 
@@ -35,7 +34,7 @@ Uygulama, ikili (binary) konteyner içerisindeki 3 kanallı (128 Hz, Little-Endi
 ## 🇬🇧 English
 
 ### Purpose
-This Windows desktop application is designed to natively parse **`.arc`** Holter patient record files exported from **Bosram Biomedical WeCardio 7.0** ECG analysis software and perform clinical-grade **Heart Rate Variability (HRV)** analysis without relying on external libraries or paid third-party components.
+This Windows desktop application is designed to natively parse **`.arc`** Holter patient record files exported from China made ECG analysis software and perform clinical-grade **Heart Rate Variability (HRV)** analysis without relying on external libraries or paid third-party components.
 
 The software decodes the 3-channel (128 Hz, Little-Endian 16-bit) raw ECG waveforms and beat annotation records (`beats.atr`) directly from the binary container. By automatically excluding ectopic beats (SVE/VE) and non-beat markers, it isolates pure **NN (Normal-to-Normal)** intervals to compute both Time-Domain and Welch FFT-based Frequency-Domain circadian autonomic balance metrics.
 
