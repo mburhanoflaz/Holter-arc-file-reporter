@@ -19,3 +19,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## 📄 Lisans ve Araştırma Amaçlı Kullanım Notu (License & Research Disclaimer)
+
+### 🇹🇷 Türkçe
+Bu proje, **kalp hızı değişkenliği (HRV) alanında çalışan klinik hekimlerin ve akademik araştırmacıların tamamen ücretsiz kullanımına sunulmak** amacıyla geliştirilmiştir ve **MIT Lisansı** ile lisanslanmıştır. Kaynak kodları özgürce inceleyebilir, akademik çalışmalarınızda kullanabilir, değiştirebilir ve paylaşabilirsiniz.
+
+> **Klinik Sorumluluk Reddi:** Bu yazılım yalnızca akademik araştırma ve veri analizi amacıyla geliştirilmiştir; onaylı bir tıbbi tanı veya tedavi cihazı (SaMD) değildir. Elde edilen HRV parametreleri tek başına klinik karar verme süreçlerinde kullanılmamalı, mutlaka orijinal cihaz raporları ve hekim değerlendirmesi ile birlikte yorumlanmalıdır.
+
+### 🇬🇧 English
+This project was created to be **freely available to clinical physicians and academic researchers conducting Heart Rate Variability (HRV) research**, and is licensed under the **MIT License**. You are free to use, modify, distribute, and adapt the source code for your research and non-commercial or commercial projects.
+
+> **Medical Disclaimer:** This software is intended strictly for academic research and data analysis purposes and is not a certified medical diagnostic device. Derived HRV metrics should not be used as the sole basis for clinical diagnosis or treatment decisions and must always be interpreted alongside original device reports and professional clinical judgment.
