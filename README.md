@@ -29,6 +29,10 @@ Uygulama, ikili (binary) konteyner içerisindeki 3 kanallı (128 Hz, Little-Endi
    * Klinik raporu kaydetmek için **`Raporu .RTF Kaydet...`** butonunu kullanın.
    * `.arc` paketinin içindeki ham veri dosyalarını çıkarmak için **`.ARC İçeriğini Klasöre Çıkar...`** butonunu kullanın.
 
+Bu proje, **kalp hızı değişkenliği (HRV) alanında çalışan klinik hekimlerin ve akademik araştırmacıların tamamen ücretsiz kullanımına sunulmak** amacıyla geliştirilmiştir ve **MIT Lisansı** ile lisanslanmıştır. Kaynak kodları özgürce inceleyebilir, akademik çalışmalarınızda kullanabilir, değiştirebilir ve paylaşabilirsiniz.
+
+> **Klinik Sorumluluk Reddi:** Bu yazılım yalnızca akademik araştırma ve veri analizi amacıyla geliştirilmiştir; onaylı bir tıbbi tanı veya tedavi cihazı (SaMD) değildir. Elde edilen HRV parametreleri tek başına klinik karar verme süreçlerinde kullanılmamalı, mutlaka orijinal cihaz raporları ve hekim değerlendirmesi ile birlikte yorumlanmalıdır.
+
 ---
 
 ## 🇬🇧 English
@@ -53,5 +57,12 @@ The software decodes the 3-channel (128 Hz, Little-Endian 16-bit) raw ECG wavefo
 3. **Start Hour Configuration:** If the recording start time is not present in `patient.hea`, the application defaults to **`10` (10:00 AM)**, which can be adjusted in the top toolbar.
 4. **Run Analysis:** Click **`2. Analizi Başlat`** (*Start Analysis*). View the summary tables, charts, hourly breakdowns, and 3-channel ECG preview across the tabs.
 5. **Export Outputs:**
+
+6. ## 📄 Lisans ve Araştırma Amaçlı Kullanım Notu (License & Research Disclaimer)
+
+
+This project was created to be **freely available to clinical physicians and academic researchers conducting Heart Rate Variability (HRV) research**, and is licensed under the **MIT License**. You are free to use, modify, distribute, and adapt the source code for your research and non-commercial or commercial projects.
+
+> **Medical Disclaimer:** This software is intended strictly for academic research and data analysis purposes and is not a certified medical diagnostic device. Derived HRV metrics should not be used as the sole basis for clinical diagnosis or treatment decisions and must always be interpreted alongside original device reports and professional clinical judgment.
    * Click **`Raporu .RTF Kaydet...`** (*Save Report as .RTF*) to export the clinical report.
    * Click **`.ARC İçeriğini Klasöre Çıkar...`** (*Extract .ARC Contents to Folder*) to unpack all internal files.
