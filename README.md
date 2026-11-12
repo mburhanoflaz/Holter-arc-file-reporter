@@ -4,6 +4,12 @@
 
 ---
 
+<img width="1920" height="1018" alt="image4" src="https://github.com/user-attachments/assets/49531205-a7de-4e82-8720-f94d5954009f" />
+<img width="1920" height="1018" alt="image3" src="https://github.com/user-attachments/assets/0c896c3b-7678-420f-b9ed-48ecf5755897" />
+<img width="1920" height="1021" alt="image2" src="https://github.com/user-attachments/assets/9637ce47-c5bb-424a-b442-cb93a5b6dab4" />
+<img width="1920" height="1021" alt="image1" src="https://github.com/user-attachments/assets/b1169672-dba1-4e68-a2d4-b7ad66fbfe55" />
+
+
 ## 🇹🇷 Türkçe
 
 ### Kullanım Amacı
