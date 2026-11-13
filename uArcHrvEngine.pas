@@ -1,5 +1,11 @@
 unit uArcHrvEngine;
 
+{_________________________________________________________________________________
+Bu masaüstü uygulaması, Çin üretimi Holter EKG analiz yazılımı tarafından dışa aktarılan *.arc uzantılı ham hasta kayıt dosyalarını herhangi bir üçüncü parti kütüphaneye veya harici araca ihtiyaç duymadan doğrudan çözümlemek ve klinik düzeyde Kalp Hızı Değişkenliği (HRV) analizi yapmak amacıyla geliştirilmiştir.
+
+Uygulama, ikili (binary) konteyner içerisindeki 3 kanallı (128 Hz, Little-Endian 16-bit) ham EKG sinyallerini ve atım işaretleyicilerini (`beats.atr`) ayrıştırır. Ektopik atımları (SVE/VE) ve rapor dışı işaretçileri otomatik filtreleyerek saf NN (Normal-to-Normal) aralıklarını izole eder; hem Zaman Alanı (Time-Domain) hem de Welch FFT tabanlı Frekans Alanı (Frequency-Domain) sirkadiyen otonom denge parametrelerini ve kalp hızı asimetrisi (HRA) parametrelerini hesaplar.
+_________________________________________________________________________________}
+
 interface
 
 uses
@@ -74,6 +80,8 @@ type
     PoincareX: TArray<Double>;
     PoincareY: TArray<Double>;
     HourlyRows: TArray<THourlyHrvRow>;
+    HRA_PI: Double;   // Porta İndeksi (%)
+    HRA_GI: Double;   // Guzik İndeksi (%)
   end;
 
   TArcHrvProcessor = class
@@ -467,6 +475,10 @@ var
   HNN, HT, HDiff: TList<Double>;
   HFreq: TFreqSummary;
   ClkH: Double;
+  AccelCount, DecelCount: Integer;
+  DecelSqDistSum, TotalSqDistSum: Double;
+  RRN, RRN1, Diff, SqDist: Double;
+
 begin
   FillChar(Result, SizeOf(Result), 0);
   Result.StartHour := ExtractStartHour(DefaultStartHour);
@@ -545,6 +557,47 @@ begin
     Result.NNTimesSec := TimeList.ToArray;
     Result.PoincareX := PoincX.ToArray;
     Result.PoincareY := PoincY.ToArray;
+
+    // --- HRA Hesaplaması (Porta ve Guzik İndeksleri) ---
+    begin
+      AccelCount := 0;
+      DecelCount := 0;
+      DecelSqDistSum := 0.0;
+      TotalSqDistSum := 0.0;
+
+      for I := 0 to High(Result.PoincareX) do
+      begin
+        RRN := Result.PoincareX[I];
+        RRN1 := Result.PoincareY[I];
+        Diff := RRN1 - RRN;
+        SqDist := (Diff * Diff) / 2.0; // Kimlik çizgisine kare uzaklık
+
+        if Diff > 0 then // Yavaşlama (Deceleration)
+        begin
+          Inc(DecelCount);
+          DecelSqDistSum := DecelSqDistSum + SqDist;
+        end
+        else if Diff < 0 then // Hızlanma (Acceleration)
+          Inc(AccelCount);
+        // Diff = 0 ise (eşit ardışık RR) hiçbir sayaca eklenmez
+
+        TotalSqDistSum := TotalSqDistSum + SqDist;
+      end;
+
+      // Porta İndeksi (Hızlanma yüzdesi)
+      if (AccelCount + DecelCount) > 0 then
+        Result.HRA_PI := (AccelCount / (AccelCount + DecelCount)) * 100.0
+      else
+        Result.HRA_PI := 0;
+
+      // Guzik İndeksi (Yavaşlama kare uzaklık yüzdesi)
+      if TotalSqDistSum > 0 then
+        Result.HRA_GI := (DecelSqDistSum / TotalSqDistSum) * 100.0
+      else
+        Result.HRA_GI := 0;
+    end;
+    // --- HRA Hesaplaması Sonu ---
+
     Result.PureNNCount := Length(Result.NNValuesMs);
 
     if Result.PureNNCount < 10 then Exit;
