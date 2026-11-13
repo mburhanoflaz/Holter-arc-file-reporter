@@ -3,11 +3,11 @@
 [🇹🇷 Türkçe](#-türkçe) | [🇬🇧 English](#-english)
 
 ---
-
-<img width="1920" height="1018" alt="image4" src="https://github.com/user-attachments/assets/49531205-a7de-4e82-8720-f94d5954009f" />
-<img width="1920" height="1018" alt="image3" src="https://github.com/user-attachments/assets/0c896c3b-7678-420f-b9ed-48ecf5755897" />
-<img width="1920" height="1021" alt="image2" src="https://github.com/user-attachments/assets/9637ce47-c5bb-424a-b442-cb93a5b6dab4" />
-<img width="1920" height="1021" alt="image1" src="https://github.com/user-attachments/assets/b1169672-dba1-4e68-a2d4-b7ad66fbfe55" />
+[HRV Raporu.pdf](https://github.com/user-attachments/files/34826155/HRV.Raporu.pdf)
+<img width="1920" height="1016" alt="image" src="https://github.com/user-attachments/assets/e4da2a4e-1e7d-4312-a9ab-8f5750575b70" />
+<img width="1920" height="1018" alt="image" src="https://github.com/user-attachments/assets/01dfe616-92be-4787-8bbd-fc163db09a77" />
+<img width="1920" height="1016" alt="image" src="https://github.com/user-attachments/assets/514af7d1-9de4-44cd-8f40-cbcfe8c726f1" />
+<img width="1920" height="1016" alt="image" src="https://github.com/user-attachments/assets/02eadc36-990c-46d7-92b4-aaba1d117ec1" />
 
 
 ## 🇹🇷 Türkçe
@@ -23,6 +23,7 @@ Uygulama, ikili (binary) konteyner içerisindeki 3 kanallı (128 Hz, Little-Endi
 * **Kapsamlı HRV Metrikleri:**
   * **Zaman Alanı:** Ortalama/Min/Maks HR, SDNN, SDNN Index, SDANN, rMSSD, pNN50 ve HRV Triangular Index.
   * **Frekans Alanı & Sirkadiyen Analiz:** 24 saatlik, Gündüz (08:00–22:00) ve Gece (23:00–06:00) dilimleri için Total Power, VLF, LF, HF, LF/HF oranı, Sempatik Modülasyon (`LF nu %`), Parasempatik Aktivite (`HF nu %`) ve Sirkadiyen İndeks.
+  * **Kalp Hızı Asimetri (HRA) analizi :** Porta Indeks (PI) ve Guzik Indeksi (GI):
 * **Görselleştirme:** 24 saatlik NN Takogramı, Saatlik Sempatik/Parasempatik denge grafiği, Poincaré (Lorenz) diyagramı ve 3 kanallı ham EKG önizleme ekranı.
 * **RTF Klinik Rapor Çıktısı:** Analiz sonuçlarını düzenlenebilir zengin metin biçiminde oluşturur ve `.rtf` belgesi olarak kaydeder.
 
@@ -54,6 +55,7 @@ The software decodes the 3-channel (128 Hz, Little-Endian 16-bit) raw ECG wavefo
 * **Comprehensive HRV Metrics:**
   * **Time-Domain:** Mean/Min/Max HR, SDNN, SDNN Index, SDANN, rMSSD, pNN50, and HRV Triangular Index.
   * **Frequency-Domain & Circadian Balance:** Total Power, VLF, LF, HF, LF/HF ratio, Sympathetic Modulation (`LF nu %`), Parasympathetic Activity (`HF nu %`), and Circadian Index across 24-hour, Daytime (08:00–22:00), and Nighttime (23:00–06:00) periods.
+  * **Heart rate asymmetry (HRA) analysis:** Porta's Index (PI) and Guzik's Index (GI).
 * **Interactive Visualization:** Custom-drawn 24-hour NN Tachogram, Hourly Sympathetic/Parasympathetic bar chart, Poincaré (Lorenz) plot, and 3-channel raw ECG waveform viewer.
 * **RTF Clinical Report Export:** Generates a formatted, editable clinical report and exports it as a `.rtf` document.
 
@@ -63,8 +65,6 @@ The software decodes the 3-channel (128 Hz, Little-Endian 16-bit) raw ECG wavefo
 3. **Start Hour Configuration:** If the recording start time is not present in `patient.hea`, the application defaults to **`10` (10:00 AM)**, which can be adjusted in the top toolbar.
 4. **Run Analysis:** Click **`2. Analizi Başlat`** (*Start Analysis*). View the summary tables, charts, hourly breakdowns, and 3-channel ECG preview across the tabs.
 5. **Export Outputs:**
-
-6. ## 📄 Lisans ve Araştırma Amaçlı Kullanım Notu (License & Research Disclaimer)
    * Click **`Raporu .RTF Kaydet...`** (*Save Report as .RTF*) to export the clinical report.
    * Click **`.ARC İçeriğini Klasöre Çıkar...`** (*Extract .ARC Contents to Folder*) to unpack all internal files.
 
