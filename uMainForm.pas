@@ -1,4 +1,10 @@
-﻿unit uMainForm;
+unit uMainForm;
+
+{_________________________________________________________________________________
+Bu masaüstü uygulaması, Çin üretimi Holter EKG analiz yazılımı tarafından dışa aktarılan *.arc uzantılı ham hasta kayıt dosyalarını herhangi bir üçüncü parti kütüphaneye veya harici araca ihtiyaç duymadan doğrudan çözümlemek ve klinik düzeyde Kalp Hızı Değişkenliği (HRV) analizi yapmak amacıyla geliştirilmiştir.
+
+Uygulama, ikili (binary) konteyner içerisindeki 3 kanallı (128 Hz, Little-Endian 16-bit) ham EKG sinyallerini ve atım işaretleyicilerini (`beats.atr`) ayrıştırır. Ektopik atımları (SVE/VE) ve rapor dışı işaretçileri otomatik filtreleyerek saf NN (Normal-to-Normal) aralıklarını izole eder; hem Zaman Alanı (Time-Domain) hem de Welch FFT tabanlı Frekans Alanı (Frequency-Domain) sirkadiyen otonom denge parametrelerini ve kalp hızı asimetrisi (HRA) parametrelerini hesaplar.
+_________________________________________________________________________________}
 
 interface
 
@@ -186,6 +192,9 @@ begin
     Format('%%%.1f', [FReport.Freq24h.ParasympatheticPct]), Format('%%%.1f', [FReport.FreqDay.ParasympatheticPct]), Format('%%%.1f', [FReport.FreqNight.ParasympatheticPct]));
   SetRow(22, 'Gece / Gündüz HF (Vagal) Artış Oranı', Format('%.2fx', [FReport.NightDayHFRatio]), '-', '-');
   SetRow(23, 'Sirkadiyen İndeks (Gece/Gündüz RR)', Format('%.2f', [FReport.CircadianIndex]), '-', '-');
+  SetRow(24, '--- Kalp Hızı Asimetrisi analizi (HRA) --- ','---', '---', '---');
+  SetRow(25, 'Porta HRA İndeksi (%)', Format('%%%.2f', [FReport.HRA_PI]), '-', '-');
+  SetRow(26, 'Guzik HRA İndeksi (%)', Format('%%%.2f', [FReport.HRA_GI]), '-', '-');
 end;
 
 procedure TMainForm.PopulateHourlyGrid;
@@ -247,7 +256,7 @@ begin
     AddBoldLine('24 SAATLİK HOLTER KALP HIZI DEĞİŞKENLİĞİ (HRV) KLİNİK ANALİZ RAPORU', 13, clNavy);
     reReport.Lines.Add('--------------------------------------------------------------------------------');
     reReport.Lines.Add(Format('Dosya Adı       : %s', [FReport.FileName]));
-    reReport.Lines.Add(Format('Cihaz / Format  : Bosram WeCardio 7.0 (.arc) | Başlangıç Saati: %.2d:00', [Trunc(FReport.StartHour)]));
+    reReport.Lines.Add(Format('Cihaz / Format  : (*.arc) | Başlangıç Saati: %.2d:00', [Trunc(FReport.StartHour)]));
     reReport.Lines.Add(Format('Atım Özeti      : Toplam %d atım (%d Saf NN aralığı, %d Ektopik atım dışlandı)',
       [FReport.ValidBeats, FReport.PureNNCount, FReport.EctopicCount]));
     reReport.Lines.Add('');
@@ -290,6 +299,12 @@ begin
     for R in FReport.HourlyRows do
       reReport.Lines.Add(Format('  %-12s  %7d   %6.1f  %6.1f   %6.1f  %%%5.1f   %6.2f  %%%5.1f     %%%5.1f',
         [R.ClockLabel, R.NNCount, R.MeanHR, R.SDNN, R.rMSSD, R.pNN50, R.LF_HF, R.SympatheticPct, R.ParasympatheticPct]));
+    reReport.Lines.Add('');
+
+    AddBoldLine('4. KALP HIZI ASİMETRİSİ (HRA)', 10);
+    reReport.Lines.Add('  * Porta İndeksi (Hızlanma %)        : '+Format('%.1f', [FReport.HRA_PI]));
+    reReport.Lines.Add('  * Guzik İndeksi (Yavaşlama Varyansı): '+Format('%.1f', [FReport.HRA_GI]));
+    reReport.Lines.Add('');
   finally
     reReport.Lines.EndUpdate;
   end;
