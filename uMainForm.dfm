@@ -5,8 +5,8 @@ object MainForm: TMainForm
     '(*.arc) Holter HRV Analiz ve Raporlama Sistemi - Dr.M.Burhan Ofl' +
     'az- NEU MTF Pediatrik Kardiyoloji BD - Konya / TURKiYE (mburhano' +
     'flaz@gmail.com)'
-  ClientHeight = 744
-  ClientWidth = 1176
+  ClientHeight = 736
+  ClientWidth = 1174
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object MainForm: TMainForm
   object pnlTop: TPanel
     Left = 0
     Top = 0
-    Width = 1176
+    Width = 1174
     Height = 56
     Align = alTop
     BevelOuter = bvNone
@@ -107,8 +107,8 @@ object MainForm: TMainForm
   object pgMain: TPageControl
     Left = 0
     Top = 56
-    Width = 1176
-    Height = 665
+    Width = 1174
+    Height = 657
     ActivePage = tsSummary
     Align = alClient
     TabOrder = 1
@@ -117,15 +117,43 @@ object MainForm: TMainForm
       object sgSummary: TStringGrid
         Left = 0
         Top = 0
-        Width = 1168
-        Height = 635
+        Width = 1166
+        Height = 627
         Align = alClient
         ColCount = 4
         DefaultColWidth = 260
         DefaultRowHeight = 26
-        RowCount = 24
+        RowCount = 27
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
         TabOrder = 0
+        RowHeights = (
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26
+          26)
       end
     end
     object tsCharts: TTabSheet
@@ -134,8 +162,8 @@ object MainForm: TMainForm
       object pbHrvCharts: TPaintBox
         Left = 0
         Top = 0
-        Width = 1168
-        Height = 635
+        Width = 1166
+        Height = 627
         Align = alClient
         OnPaint = pbHrvChartsPaint
         ExplicitWidth = 1172
@@ -148,8 +176,8 @@ object MainForm: TMainForm
       object sgHourly: TStringGrid
         Left = 0
         Top = 0
-        Width = 1168
-        Height = 635
+        Width = 1166
+        Height = 627
         Align = alClient
         ColCount = 13
         DefaultColWidth = 88
@@ -164,8 +192,8 @@ object MainForm: TMainForm
       object pbEcg: TPaintBox
         Left = 0
         Top = 40
-        Width = 1168
-        Height = 595
+        Width = 1166
+        Height = 587
         Align = alClient
         OnPaint = pbEcgPaint
         ExplicitWidth = 1172
@@ -174,7 +202,7 @@ object MainForm: TMainForm
       object pnlEcgCtrl: TPanel
         Left = 0
         Top = 0
-        Width = 1168
+        Width = 1166
         Height = 40
         Align = alTop
         BevelOuter = bvNone
@@ -211,8 +239,8 @@ object MainForm: TMainForm
       object reReport: TRichEdit
         Left = 0
         Top = 0
-        Width = 1168
-        Height = 635
+        Width = 1166
+        Height = 627
         Align = alClient
         Font.Charset = TURKISH_CHARSET
         Font.Color = clWindowText
@@ -227,8 +255,8 @@ object MainForm: TMainForm
   end
   object sbStatus: TStatusBar
     Left = 0
-    Top = 721
-    Width = 1176
+    Top = 713
+    Width = 1174
     Height = 23
     Panels = <
       item
