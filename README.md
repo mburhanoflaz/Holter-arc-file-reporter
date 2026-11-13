@@ -3,7 +3,7 @@
 [🇹🇷 Türkçe](#-türkçe) | [🇬🇧 English](#-english)
 
 ---
-[HRV Raporu.pdf](https://github.com/user-attachments/files/34826155/HRV.Raporu.pdf)
+<img width="1028" height="1474" alt="image" src="https://github.com/user-attachments/assets/3a170ed6-a810-4f69-81cf-01b9ae97e99f" />
 <img width="1920" height="1016" alt="image" src="https://github.com/user-attachments/assets/e4da2a4e-1e7d-4312-a9ab-8f5750575b70" />
 <img width="1920" height="1018" alt="image" src="https://github.com/user-attachments/assets/01dfe616-92be-4787-8bbd-fc163db09a77" />
 <img width="1920" height="1016" alt="image" src="https://github.com/user-attachments/assets/514af7d1-9de4-44cd-8f40-cbcfe8c726f1" />
